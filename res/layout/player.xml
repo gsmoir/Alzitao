@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <!-- Player header -->
+    <LinearLayout
+        android:id="@+id/player_header_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="#00ff00"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        
+        >     
+        <!-- Song title -->
+        <TextView 
+            android:id="@+id/songTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:textColor="#04b3d2"
+			android:textSize="16dp"
+			android:paddingLeft="10dp"
+			android:textStyle="bold"
+			android:text="The Good, The Bad And The Ugly"
+			android:layout_marginTop="10dp"
+            />
+        
+        <Button
+			android:id="@+id/btnPlaylist"
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:background="#000000"
+			android:text="Pl"
+			/>
+        
+    </LinearLayout>
+    
+    
+    <LinearLayout
+		android:id="@+id/songThumbnail"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="10dp"
+		android:paddingBottom="10dp"
+		android:gravity="center"
+		android:layout_below="@id/player_header_bg">
+        
+		<ImageView android:layout_width="300dp"
+		android:layout_height="300dp"
+		android:src="@drawable/tape"
+		/>
+		
+		</LinearLayout>
+    
+    <!-- player footer -->
+    <LinearLayout 
+        android:id="@+id/player_footer_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:background="#888888">
+        
+        
+        <!-- Previous button -->
+        <Button
+            android:id="@+id/btnPrevious"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="#0000ff"
+			android:layout_marginLeft="10dp"
+			android:text="Prev"
+			/>
+        <!-- Backward -->
+        <Button
+            android:id="@+id/btnBwd"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="#0000ff"
+			android:layout_marginLeft="10dp"
+			android:text="Bwd"
+			/>
+        <!-- Play Button -->
+		<Button
+			android:id="@+id/btnPlay"
+			
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="#0000ff"
+			android:layout_marginLeft="10dp"
+			android:text="Play"
+			/>
+	
+		<!-- Forward -->
+        <Button
+            android:id="@+id/btnFwd"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="#0000ff"
+			android:layout_marginLeft="10dp"
+			android:text="Fwd"
+			/>	
+		
+		  <!-- Next button -->
+        <Button
+            android:id="@+id/btnNext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="#0000ff"
+			android:layout_marginLeft="10dp"
+			android:text="Nxt"
+			/>      
+		
+        <!-- Repeat / Suffle Button -->
+   		<Button
+            android:id="@+id/btRrpt"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="#0000ff"
+			android:layout_marginLeft="10dp"
+			android:text="Rpt"
+			/> 
+			
+   		<!-- Suffle Button -->
+   		<Button
+            android:id="@+id/btSfl"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="#0000ff"
+			android:layout_marginLeft="10dp"
+			android:text="Sfl"
+			/> 
+        
+    </LinearLayout>
+    
+    
+   
+
+</RelativeLayout>

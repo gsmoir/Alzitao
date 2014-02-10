@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <!-- Player header -->
+    <LinearLayout
+        android:id="@+id/player_header_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="#ffffff"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        
+        >     
+        <!-- Song title -->
+        <TextView 
+            android:id="@+id/songTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:textColor="#04b3d2"
+			android:textSize="16dp"
+			android:paddingLeft="10dp"
+			android:textStyle="bold"
+			android:text="The Good, The Bad And The Ugly"
+			android:layout_marginTop="10dp"
+            />
+        
+        
+          <!-- Repeat Button -->
+   		<ImageButton
+            android:id="@+id/btRrpt"
+			android:layout_width="wrap_content"
+			android:layout_weight="0"
+			android:layout_height="wrap_content"
+			android:src="@drawable/btn_repeat"
+			android:layout_marginLeft="10dp"
+			
+			/> 
+			
+        
+        
+    </LinearLayout>
+    
+    
+    <!-- Middle tap icon -->
+    
+    <LinearLayout
+		android:id="@+id/songMainThumbnail"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="10dp"
+		android:paddingBottom="10dp"
+		android:gravity="center"
+		android:background="#ffffff"
+		android:layout_below="@id/player_header_bg"
+		android:layout_above="@+id/player_footer_bg"
+	>
+
+        <ImageButton
+            android:id="@+id/btn_main_next"
+            android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/im_tape_5"
+			 />
+		
+		</LinearLayout>
+    
+    <!-- player footer -->
+    <LinearLayout 
+        android:id="@+id/player_footer_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:background="#BABABA"
+        android:layout_alignParentBottom="true"
+        >
+        
+        
+        <!-- Previous button -->
+        <ImageButton
+            android:id="@+id/btnPrevious"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="fill_parent"
+			android:src="@drawable/btn_previous"
+			android:layout_marginLeft="10dp"
+			
+			/>
+       
+        <!-- Play Button -->
+		<ImageButton
+			android:id="@+id/btnPlay"
+			
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="wrap_content"
+			android:src="@drawable/btn_play"
+			android:layout_marginLeft="10dp"
+			
+			/>
+		
+		  <!-- Next button -->
+        <ImageButton
+            android:id="@+id/btnNext"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="fill_parent"
+			android:src="@drawable/btn_next"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="10dp"
+
+			/>      
+		
+      
+    </LinearLayout>
+    
+    
+   
+
+</RelativeLayout>

@@ -36,10 +36,18 @@
         </activity>
         
         <activity 
-            android:name="com.alzitao.AlzitaoHome.CloseallActionbarAdapter"          
+            android:name="com.alzitao.AlzitaoHome.ActionbarCloseallAdapter"          
             ></activity>
         
         <activity android:name="com.alzitao.AlzitaoHome.CallActivity"></activity>
+        <activity android:name="com.alzitao.AlzitaoHome.MusicPlayerMainActivity"></activity>
+        
+        
+        <activity android:name="com.alzitao.AlzitaoHome.ImageViewer"></activity>
+        <activity android:name="com.alzitao.AlzitaoHome.ImageGalleryAdapter"
+            android:theme="@android:style/Theme.Holo"
+            
+            ></activity>
         
     </application>
 
