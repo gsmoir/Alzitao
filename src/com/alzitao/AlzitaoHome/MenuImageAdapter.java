@@ -1,8 +1,7 @@
 /*This class is intended for designing HomeScreen menu image settings */
 package com.alzitao.AlzitaoHome;
 
-import com.alzitao.homescreen.R;
-
+import alzitao_home.helper.UtilsForImageGallery;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
@@ -10,18 +9,25 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.alzitao.homescreen.R;
 
 public class MenuImageAdapter extends BaseAdapter{
 
 	String LOG_TAG = "123";
 	
 	private Context mContext;
-	
+	private UtilsForImageGallery utilsForImageGallery;
+	private int gridWidth;
+	private int padding;
+	private GridView gridView;
 	
 	public MenuImageAdapter(Context c){
 		
 		mContext = c;
 	}
+	
 	
 	
 	
@@ -65,13 +71,27 @@ public class MenuImageAdapter extends BaseAdapter{
 		ImageView imageView;
 		Log.i(LOG_TAG, "4");
 		
-		if(convertView == null){ //that is not recycled/new, initialize some attributes
-			imageView =  new ImageView(mContext);
-			imageView.setLayoutParams( new GridView.LayoutParams(210, 210) );
-			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-			imageView.setPadding(7, 7, 7, 7);
-			//imageView.setBackgroundResource(R.drawable.stroke);//Was trying to cutomize menu bg
+		
+		//Get gridview width
+		utilsForImageGallery = new UtilsForImageGallery( mContext );
+		
+		//Dynamic defining columnwidth by getting screenwidth, minus padding , and divided into no. of columns
+		gridWidth=  (int) ( (utilsForImageGallery.getScreenWidth() ) / 5 );
+		//columnWidth = (int) ((utils.getScreenWidth() - ((AppConstant.NUM_COL + 1) * padding ) ) / AppConstant.NUM_COL );
+		
+		padding = gridWidth/10;
+		
 			
+		if(convertView == null){ //that is not recycled/new, initialize some attributes
+			
+			
+			imageView =  new ImageView(mContext);
+			
+			imageView.setLayoutParams( new GridView.LayoutParams(gridWidth, gridWidth) );
+			
+			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+			
+			imageView.setPadding(padding,padding,padding,padding);
 			
 		}
 		else{

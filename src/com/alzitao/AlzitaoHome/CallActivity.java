@@ -2,6 +2,7 @@ package com.alzitao.AlzitaoHome;
 
 import com.alzitao.homescreen.R;
 
+import alzitao_home.helper.UtilsForImageGallery;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -16,8 +17,12 @@ import android.widget.GridView;
 
 public class CallActivity extends MainActivity {
 	
-	String LOG_TAG = "123";
+	String LOG_TAG = "CallActivity";
 	String telNo = "123";
+	
+	private UtilsForImageGallery utilsForImageGallery;
+	private int gridWidth;
+	private int padding;
 	
 	
 	@Override
@@ -42,11 +47,16 @@ public class CallActivity extends MainActivity {
 		//Contacts menu designing
 				
 		GridView contact_gridview = (GridView) findViewById(R.id.contact_grid);	
+		
+		//Call to set dynamic grid layout before adapter to feed image
+		InitializeGridLayout(contact_gridview);
+		
 		contact_gridview.setAdapter(new MenuImageAdapter(this));
 				
 		// Call PhoneStateListener to listen to calling activities
 		PhoneCallListener phoneListener = new PhoneCallListener();
 		TelephonyManager tm = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+		
 		tm.listen(phoneListener, PhoneStateListener.LISTEN_CALL_STATE);
 		
 		
@@ -73,6 +83,31 @@ public class CallActivity extends MainActivity {
 	    }
 				
 	}
+	
+	
+		//Set Grid Layout parameters, ie. basic column and padding sizes
+		private void InitializeGridLayout(GridView menu_gridview){
+			
+			
+			//Get gridview width
+			utilsForImageGallery = new UtilsForImageGallery(this);
+					
+			//Dynamic defining columnwidth by getting screenwidth, minus padding , and divided into no. of columns
+			gridWidth=  (int) ( (utilsForImageGallery.getScreenWidth()  ) / 5 );
+			
+					
+			padding = gridWidth/20;
+			
+			
+			//Set GridView Layout Dynamically
+			//Get the gridView
+			menu_gridview.setColumnWidth(gridWidth);
+			menu_gridview.setPadding((int) padding,(int) padding,(int) padding,(int) padding);
+					
+			
+		}
+	
+	
 	
 
 	//Get Telephone number for each grid

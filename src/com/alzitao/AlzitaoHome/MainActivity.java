@@ -1,19 +1,18 @@
 package com.alzitao.AlzitaoHome;
 
+import alzitao_home.helper.UtilsForImageGallery;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.GridView;
 
 import com.alzitao.homescreen.R;
@@ -22,6 +21,10 @@ import com.alzitao.homescreen.R;
 //Main Activity
 public class MainActivity extends Activity {
 	String LOG_TAG = "Sam Main";
+	
+	private UtilsForImageGallery utilsForImageGallery;
+	private int gridWidth;
+	private int padding;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,12 +69,21 @@ public class MainActivity extends Activity {
 	
 	
 	
+	/*Set layout(Menu & calling ) and adapter
+	 * 
+	 */
 	public void setHomeMenu(){
-		
 		//Main menu designing
 		GridView menu_gridview = (GridView) findViewById(R.id.menu_grid);
+		
+		
+		InitializeGridLayout(menu_gridview);
+		
 		menu_gridview.setAdapter(new MenuImageAdapter(this));
-				
+		
+		
+		
+		
 				
 		//set onclick on Menu for different Activities
 		menu_gridview.setOnItemClickListener(new OnItemClickListener(){
@@ -92,12 +104,26 @@ public class MainActivity extends Activity {
 				//For Image Gallery
 				if(pos == 1){	
 					Log.i(LOG_TAG, "pos 2");
-					Intent imgIntent = new Intent(MainActivity.this, ImageViewer.class);
+					Intent imgIntent = new Intent(MainActivity.this, ImageGalleryActivity.class);
 					Log.i(LOG_TAG, "pos 3");
 					imgIntent.putExtra("id", pos);
 					Log.i(LOG_TAG, "pos 4");
 					startActivity(imgIntent);
 				}
+				
+				
+				//For Radio Player
+				if(pos == 2){	
+					Log.i(LOG_TAG, "rp1");
+					Intent radioPlayer = new Intent();
+					radioPlayer.setClassName("com.mediatek.FMRadio", "com.mediatek.FMRadio.FMRadioActivity");
+					Log.i(LOG_TAG, "rp2");
+					
+					startActivity(radioPlayer);
+					Log.i(LOG_TAG, "rp3");
+				}
+						
+				
 						
 						
 				//For Music Player
@@ -106,11 +132,56 @@ public class MainActivity extends Activity {
 					Intent musicPlayerIntent = new Intent(MainActivity.this, MusicPlayerMainActivity.class);
 					startActivity(musicPlayerIntent);
 				}
+				
+				//For Piano
+				if(pos == 4){	
+					Log.i(LOG_TAG, "piano2");
+					Intent piano = new Intent();
+					piano.setClassName("com.htlvnapps.pianokid", "com.htlvnapps.pianokid.MenuActivity");
+					Log.i(LOG_TAG, "piano1");
+					
+					startActivity(piano);
+				}
+				
+				//For Puzzle
+				if(pos == 5){	
+					Log.i(LOG_TAG, "pzl1");
+					Intent puzzle = new Intent();
+					puzzle.setClassName("pl.heryan.sudoku", "pl.heryan.sudoku.Main");
+					Log.i(LOG_TAG, "pzl2");
+					
+					startActivity(puzzle);
+				}
+				
 						
 			}
 					
 					
 		});
+	}
+	
+	
+	//Set Grid Layout parameters, ie. basic column and padding sizes
+	private void InitializeGridLayout(GridView menu_gridview){
+		
+		
+		//Get gridview width
+				utilsForImageGallery = new UtilsForImageGallery(this);
+				
+				//Dynamic defining columnwidth by getting screenwidth, minus padding , and divided into no. of columns
+				gridWidth=  (int) ( (utilsForImageGallery.getScreenWidth() *2  ) / 9 );
+				//columnWidth = (int) ((utils.getScreenWidth() - ((AppConstant.NUM_COL + 1) * padding ) ) / AppConstant.NUM_COL );
+				
+				padding = gridWidth/20;
+		
+		
+		//Set GridView Layout Dynamically
+				//Get the gridView
+				menu_gridview.setColumnWidth(gridWidth);
+				menu_gridview.setPadding((int) padding,(int) padding,(int) padding,(int) padding);
+				//menu_gridview.setHorizontalSpacing((int) padding);
+				//menu_gridview.setVerticalSpacing((int) padding);
+		
 	}
 	
 	

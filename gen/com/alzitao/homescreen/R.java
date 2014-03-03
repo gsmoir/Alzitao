@@ -70,37 +70,27 @@ public final class R {
         public static final int tape=0x7f020029;
     }
     public static final class id {
-        public static final int action_settings=0x7f090013;
+        public static final int action_settings=0x7f09000c;
         public static final int antionbutton_closeAll=0x7f090000;
         public static final int btRrpt=0x7f090007;
-        public static final int btSfl=0x7f090012;
-        public static final int btnBwd=0x7f090010;
-        public static final int btnFwd=0x7f090011;
-        public static final int btnNext=0x7f09000d;
-        public static final int btnPlay=0x7f09000c;
-        public static final int btnPlaylist=0x7f09000e;
         public static final int btnPrevious=0x7f09000b;
         public static final int btn_main_next=0x7f09000a;
         public static final int contact_grid=0x7f090002;
-        public static final int image_layout=0x7f090004;
+        public static final int full_layout=0x7f090004;
+        public static final int image_pager=0x7f090003;
         public static final int menu_grid=0x7f090001;
-        public static final int photo_pager=0x7f090003;
         public static final int player_footer_bg=0x7f090009;
         public static final int player_header_bg=0x7f090005;
         public static final int songMainThumbnail=0x7f090008;
-        public static final int songThumbnail=0x7f09000f;
         public static final int songTitle=0x7f090006;
     }
     public static final class layout {
         public static final int actionbar_custom_layout=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int calling_layout=0x7f030002;
-        public static final int image_gallery_fragment=0x7f030003;
-        public static final int image_viewer_layout=0x7f030004;
+        public static final int image_gallery_activity=0x7f030003;
+        public static final int image_gallery_layout=0x7f030004;
         public static final int music_player_layout=0x7f030005;
-        public static final int music_player_playlist_item_layout=0x7f030006;
-        public static final int music_player_playlist_layout=0x7f030007;
-        public static final int player=0x7f030008;
     }
     public static final class menu {
         public static final int actionbar_actions=0x7f080000;

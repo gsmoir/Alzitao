@@ -89,7 +89,7 @@
 			
 			/>
        
-        <!-- Play Button -->
+        <!-- Play Button
 		<ImageButton
 			android:id="@+id/btnPlay"
 			
@@ -100,8 +100,11 @@
 			android:layout_marginLeft="10dp"
 			
 			/>
+			-->
+			
+			
 		
-		  <!-- Next button -->
+		  <!-- Next button  
         <ImageButton
             android:id="@+id/btnNext"
 			android:layout_width="0dp"
@@ -111,7 +114,8 @@
 			android:layout_marginLeft="10dp"
 			android:layout_marginRight="10dp"
 
-			/>      
+			/>  
+			 -->
 		
       
     </LinearLayout>

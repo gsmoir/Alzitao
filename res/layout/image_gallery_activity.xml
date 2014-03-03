@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- XML for image full view Pager activity, Not layout (Some confusion) -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    >
+    
+    <!-- Following is layout definition for ViewPager, ie.Swipe and zoom etc -->
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/image_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        ></android.support.v4.view.ViewPager>
+
+</LinearLayout>

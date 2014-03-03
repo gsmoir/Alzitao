@@ -1,4 +1,4 @@
-package com.alzitao.AlzitaoHome;
+package alzitao_home.helper;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -10,7 +10,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
-public class MusicPlayerSongManager {
+public class UtilsForMusicPlayer {
 	
 	
 	private ArrayList<HashMap<String, String>> songList = new ArrayList<HashMap<String,String>>();
@@ -23,7 +23,8 @@ public class MusicPlayerSongManager {
 	
 	final String MEDIA_PATH = new String(appConstant.SONG_DIRECTORY);
 	
-	public MusicPlayerSongManager(Context context){
+	//Constructor
+	public UtilsForMusicPlayer(Context context){
 		this._context = context;
 	}
 	
@@ -38,6 +39,7 @@ public class MusicPlayerSongManager {
 	 *  */
 	
 	public ArrayList<HashMap<String , String>> getPlayList(){
+	
 		
 		Log.i(LOG_TAG, "mpman 1");
 		
@@ -45,7 +47,7 @@ public class MusicPlayerSongManager {
 		
 		Log.i(LOG_TAG, "mpman 2");
 		
-		if(home.exists()){
+		if(home.isDirectory()){
 			Log.i(LOG_TAG, "mpman 3");
 			//List the files from directory filtered for mp3 by FileExtensionfilter
 			if( home.listFiles(new FileExtensionFilter()).length > 0  ){
@@ -67,13 +69,14 @@ public class MusicPlayerSongManager {
 			
 		}else{
 			Log.i(LOG_TAG, "mpman 5");
-			Toast.makeText(_context, AppConstant.PHOTO_ALBUM +"Does not exists. Please create the folder and add imges.",Toast.LENGTH_SHORT).show();
+			Toast.makeText(_context, AppConstant.PHOTO_ALBUM +"Does not exists. Please create the folder and add imges.",Toast.LENGTH_LONG).show();
 						
 			Log.i(LOG_TAG, "mpman6");
 		}
 			
-			
+		
 		return songList;
+		
 		
 	}
 	

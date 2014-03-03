@@ -11,7 +11,11 @@ public class AppConstant {
 	public static final int GRID_PADDING = 8;
 	
 	//Image directory for gallery
-	public static final String PHOTO_ALBUM = "SpecialMoments";
+	public static final String PHOTO_ALBUM = "Alzitao/Photos";
+	
+	//Song directory string
+	public static final String SONG_DIRECTORY = "Alzitao/Songs";
+	
 	//Supported file formats
 	public static final List<String> FILE_EXTN = Arrays.asList("jpg", "jpeg", "png");
 	
